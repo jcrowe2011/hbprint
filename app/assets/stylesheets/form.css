@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Myriad Pro", "Myriad Pro Cond", "Myriad Pro Light"; font-size: 16px; font-style: normal; font-weight: normal; 
+}
+
+ hr{
+	margin-top: 4px;
+}
+#form {
+	width: 375px;
+	height: 450px;
+	margin: 103px 0 0 9px;
+	padding: 0 auto;
+	float: left;
+	}
+#progressBar {
+	background-image: url('/assets/progressBar.jpg');
+	background-repeat: repeat-x;
+	height: 14px;	
+	width: 375px;
+	float: left;
+}
+#bars{
+	float: left;
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+
+#bar1, #bar2, #bar3 {
+	display: inline;
+	float: left;
+	margin-right: 2px;
+}
+
+#bar4 {
+	margin-right: 1px;
+	float: left;
+}
+#bar2, #bar3, #bar4 {
+	display: none;
+
+}
+#step1, #step2, #step3, #step4{
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+#step1 h4, #step2 h4, #step3 h4, #step4 h4{
+	margin-top: 30px;
+	margin-left: 20px;
+
+}
+
+#shortSleeve, #longSleeve, #polo, #tankTop, #aa, #gil, #hanes, #dt {
+	float: left;
+	padding: 10px;
+	margin: 0px;
+	text-align: center;
+}
+/*=== step 1 ===*/				
+/*#step1 {
+	display: none;
+}*/
+#shirtSelected {
+	text-align:center;
+}
+/*=== step 2 ===*/	
+#step2 {
+	display: none;
+}
+#colorWrapper {
+	width: 375px;
+	margin: 0 auto;
+	margin-left: 36px;
+	padding: 0 auto;
+	float: left;
+
+}		
+.swatches {
+	padding: 0 auto;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #c95449;
+	float: left;
+	width: 75px;
+}
+.swatches li {
+	height: 25px;
+	list-style: none;
+	
+
+	width: 100px;
+}
+.swatches img {
+	vertical-align: middle;
+	margin-bottom: 3px;
+	margin-right: 5px;
+
+}
+/*=== Step 3 ===*/
+#step3 {
+	display: none;			
+}
+#step3 h5 {
+	font-size: 13px;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#printLocation {
+	margin-left: 20px;
+}
+#printLocation ul{
+	list-style: none;
+	display: inline;
+}
+#printLocation li{
+	margin-top: 10px;
+	width: 78px;
+	text-align: center;
+	font-size: 14px;
+	float: left;
+	margin-right: 10px;
+}
+#printLocation img{
+	float: left;
+	margin-bottom: 10px;
+}
+#specifics {
+	list-style: none;
+}
+#specifics li {
+	margin-top: 20px;
+}
+#specifics select {
+	margin-left: 15px;
+}
+#total {
+	margin-left: 11px;
+	float: left;
+}
+#total h1 {
+	margin: 2px;
+
+}
+#comparedTo {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 220px;
+}
+#comparedTo span {
+	float: left;
+	height: 75px;
+}
+#comparedTo li{
+	float: left;
+	font-size: 10px;
+	margin-left: 5px;
+}
+#getStarted {
+	float: left;
+	width: 100px;
+	margin-left: 5px;
+}
+#getStarted p {
+	margin: 0;
+	line-height: 12px;
+	font-size: 10px;
+	text-align: center;
+	margin-left: 15px;
+	width: 95px;
+}
+/*=== step4 ===*/
+#step4 {
+	display: none;
+}
+#step4 input {
+	float: left;
+	margin-top: 10px;
+}
+#step4 {
+	padding: 75px;
+}	
+#submit{
+	margin-top: 25px;
+}
+.swatchBox {
+width: 20px;
+height: 20px;
+float: left;
+border: 1px solid black;
+margin-right: 5px;
+}
+.text {
+	vertical-align: middle;
+}

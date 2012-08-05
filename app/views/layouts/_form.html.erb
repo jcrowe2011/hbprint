@@ -1,0 +1,292 @@
+		<script type="text/javascript">
+        $('document').ready(function(){
+           
+                
+                $('.shirtStyles').click(function(){
+                    image = $(this).children(0).children(0).attr('src');
+                    $('#step2Image').attr('src', image);
+                    $('#step1').slideUp();
+                    $('#step2').slideDown();
+                    $('#bar2').show();
+                    
+                });
+                total = 0;
+                $('#colorWrapper > ul > li').click(function() {
+                    $('#step2').slideUp();
+                    $('#step3').slideDown();
+					$('#bar3').show();
+                });
+                
+                $('input[name=location]').click(function() {
+                    selected = $('input[name=location]:checked').val();
+                    console.log('print changed to ' + selected);
+                    
+                });
+                
+                $('#qty').change(function() {
+                    qty = $(this).val();
+                    qtyprice = parseInt(qty) * 4;
+					$('#price').html(total);
+                    console.log(qtyprice);
+                });
+                
+                $('#colors').change(function() {       
+                    colors = $(this).val();                
+                    console.log('colors changed to ' + colors);                                                                                   
+                    if (colors > 1){ plusColor = 1.15;} else {plusColor = 0;}
+                    if (qty == 12) {
+                        basePrice = 2.46;    
+                    }
+                    if (qty == 24) {
+                         basePrice = 1.47;    
+                    }
+                    if (qty == 48) {
+                        basePrice = 1.38;
+                    }
+                    if (qty == 72) {
+                         basePrice = 1.29;
+                    } 
+                    if (qty == 144) {
+                        basePrice = 1.04;
+                    }                      
+                    console.log(basePrice);   
+                    console.log(qty);
+                    markUp = colors * plusColor;      
+                    if (!qtyprice || qtyprice == undefined) {qtyprice = 1;}
+                    total = qtyprice + ((basePrice  +  markUp) * qty);
+					if(colors = 0){total = 0};
+					number = Math.round(total*100)/100;
+                    console.log(total);
+                    $('#price').html(number);
+                });
+            
+                
+                
+                $('#getStarted').click(function() {
+                    	$('#bar4').show();
+                        
+                        qty = $('#qty').val();
+                        colors = $('#colors').val();
+                        
+                        valid = true;
+                        if (selected == '' || selected == undefined || selected == 'undefined') {
+                            alert('choose your print!');
+                            valid = false;
+                            return false;
+                        };
+                        if (qty == '0') {
+                            alert('choose your quantity!');
+                            valid = false;
+                            return false;
+                        };
+                        if (colors == '0') {
+                            alert('choose your colors!');
+                            valid = false;
+                            return false;
+                        };
+                        if (valid) {
+                            $('#step3').slideUp();
+                            $('#step4').slideDown();
+                        };
+                });
+                $('#submit').click(function(e) {
+                    e.preventDefault();
+                    $('#step4 input').each(function() {
+                        if ($(this).val() == '') {
+                            valid = false;
+                            alert('fill out all fields!');
+                        }
+                        else {
+                            valid = true;
+                        }
+                    });
+                        if (valid) {
+                            selected = $('input[name=location]').val();
+                            qty = $('#qty').val();
+                            colors = $('#colors').val();
+                            
+                            datastring = "selected=" + selected + "&qty=" + qty + "&colors=" + colors;
+                            $.ajax({
+                                url: '/pathtourl.php',
+                                type: 'POST',
+                                data: datastring,
+                                success: function() {
+                                    console.log('done');
+                                    $('#step4').html('<h1>Thanks!<br> We will contact<br> you shortly!</h1>');
+                                    }
+                            });
+                            console.log(datastring);
+                        }
+                
+                });
+            });
+		</script>
+<body>
+	<form action="#">
+ <div id="form">
+	<div id="progressBar">
+		<ul id="bars">
+			<li id="bar1"><img src="/assets/bar1.jpg"></li>
+			<li id="bar2"><img src="/assets/bar1.jpg"></li>
+			<li id="bar3"><img src="/assets/bar1.jpg"></li>
+			<li id="bar4"><img src="/assets/bar1.jpg"></li>
+		</ul>
+	</div><!-- end progressBar -->
+	<div id="step1">
+		<h4>Step 1 of 4: Choose your shirt style</h4>
+		<div id="shortSleeve" class="shirtStyles">
+			<a href="#"><img src="/assets/shortsleeve.png"></a>
+			<br>
+			Short Sleeve
+		</div>
+		<div id="longSleeve" class="shirtStyles">
+			<a href="#"><img src="/assets/longsleeve.png" ></a>
+			<br>
+			Long Sleeve
+		</div>
+		<div id="polo" class="shirtStyles">
+			<a href="#"><img src="/assets/polo.png"></a>
+			<br>
+			Polos
+		</div>
+		<div id="tankTop" class="shirtStyles">
+			<a href="#"><img src="/assets/tanktop.png"></a>
+			<br>
+			Tank Tops
+		</div>						
+	</div><!-- end step1 -->
+	<div id="step2">
+		<h4>Step 2 of 4: Choose Your Shirt Color</h4>
+		<div id="shirtSelected">
+			<a href="#"><img src="/assets/shortsleeve.png" id="step2Image"></a>
+			<hr>
+		</div><!-- end shirtSelected -->	
+		<div id="colorWrapper">
+				<ul class="swatches" id="col1">
+					<li><span class="swatchBox" id="white" style="background-color: #ffffff;"></span><span class="text">White</span></li>
+					<li><span class="swatchBox" id="charcoal" style="background-color: #494949;"></span><span class="text">Charcoal</span></li>
+					<li><span class="swatchBox" id="royal" style="background-color: #2B5FB2;"></span><span class="text">Royal</span></li>
+					<li><span class="swatchBox" id="metroBlue" style="background-color: #394D7F;"></span><span class="text">Metro Blue</span></li>
+					<li><span class="swatchBox" id="stoneBlue" style="background-color: #70869B;"></span><span class="text">Stone Blue</span></li>
+					<li><span class="swatchBox" id="orchid" style="background-color: #B79DCC;"></span><span class="text">Orchid</span></li>
+					<li><span class="swatchBox" id="maroon" style="background-color: #721E38;"></span><span class="text">Maroon</span></li>
+					<li><span class="swatchBox" id="heliconia" style="background-color: #DD0584;"></span><span class="text">Heliconia</span></li>
+	
+				</ul><!-- colorColumn end -->
+				<ul class="swatches" id="col2">
+					<li><span class="swatchBox" id="natural" style="background-color: #E9E3CB;"></span><span class="text">Natural</span></li>
+					<li><span class="swatchBox" id="sportsGrey" style="background-color: #AFAFAF;"></span><span class="text">Sports Grey</span></li>
+					<li><span class="swatchBox" id="sapphire" style="background-color: #0387B8;"></span><span class="text">Sapphire</span></li>
+					<li><span class="swatchBox" id="blueDusk" style="background-color: #262E3B;"></span><span class="text">Blue Dusk</span></li>
+					<li><span class="swatchBox" id="purple" style="background-color: #4F237A;"></span><span class="text">Purple</span></li>
+					<li><span class="swatchBox" id="red" style="background-color: #E00928;"></span><span class="text">Red</span></li>
+					<li><span class="swatchBox" id="cardinal" style="background-color: #922238;"></span><span class="text">Cardinal</span></li>
+					<li><span class="swatchBox" id="azalea" style="background-color: #E274A5;"></span><span class="text">Azalea</span></li>
+
+				</ul><!-- colorColumn end -->
+				<ul class="swatches" id="col3">
+					<li><span class="swatchBox" id="black" style="background-color: #000000;"></span><span class="text">Black</span></li>
+					<li><span class="swatchBox" id="navy" style="background-color: #1C203B;"></span><span class="text">Navy</span></li>
+					<li><span class="swatchBox" id="carolinaBlue" style="background-color: #91B0E6;"></span><span class="text">Carolina Blue</span></li>
+					<li><span class="swatchBox" id="indigoBlue" style="background-color: #2E4C66;"></span><span class="text">Indigo Blue</span></li>
+					<li><span class="swatchBox" id="violet" style="background-color: #6D6B9A;"></span><span class="text">Violet</span></li>
+					<li><span class="swatchBox" id="paprika" style="background-color: #C24146;"></span><span class="text">Paprika</span></li>
+					<li><span class="swatchBox" id="cedar" style="background-color: #A93E4E;"></span><span class="text">Cedar</span></li>
+					<li><span class="swatchBox" id="gold" style="background-color: #F4AB3A;"></span><span class="text">Gold</span></li>
+
+				</ul><!-- colorColumn end -->							
+		</div><!-- end colorWrapper -->				
+	</div><!-- end step2 -->
+	<div id="step3">
+		<h4>Step 3 of 4: Enter your details</h4>
+		<div id="printLocation">
+			<h5>Where would you like us to print your graphic?</h5>	
+			<ul>
+				<li id="front">
+					<img src="/assets/front.png">
+					Front
+					<div style="clear:both"></div>
+					<input name="location" type="radio" value="front">
+				</li>
+				
+				<li id="back">
+					<img src="/assets/front.png">
+					Back
+					<div style="clear:both"></div>
+					<input name="location" type="radio" value="back">
+				</li>
+				
+				<li id="Sleeve">
+					<img src="/assets/front.png">
+					Sleeve
+					<div style="clear:both"></div>
+					<input name="location" type="radio" value="sleeve">
+				</li>
+				<li id="Pocket">
+					<img src="/assets/front.png">
+					Pocket
+					<div style="clear:both"></div>
+					<input name="location" type="radio" value="pocket">
+				</li>
+			</ul>
+		</div><!-- end printLocation -->	
+		<div style="clear:both"></div>
+		<hr>
+			<ul id="specifics">
+				<li id="shirtsQty">
+					<h5>How many shirts do you need?</h5>
+					<select id="qty">
+						<option value="0">0</option>
+						<option value="12">12</option>
+						<option value="24">24</option>
+						<option value="48">48</option>
+						<option value="72">72</option>
+						<option value="144">144</option>
+					</select>
+				</li>
+				<li id="graphicsQty">
+					<h5>How many colors is your graphic?</h5>
+					<select id="colors">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</li>
+				<li id="moreGraphics">
+					<h5>Have more than one graphic? <a href="mailto:jcrowe@hbscreenprint.com" style="color: #539be1">Email Us</a></h5>
+				</li>
+			</ul><!-- end specifics -->
+			<div style="clear:both"></div>
+			<hr>
+			<div id="total">
+				<h1>Total $<span id="price"></span> -></h1>
+				<ul id="comparedTo">
+					<span>Compared To:</span>
+					<li>Graphic Inks - $515.29</li>
+					<li>S&C Embroidery - $845.97</li>
+					<li>Melmarc - $605.13</li>	
+				</ul><!-- end comparedTo -->
+			</div><!-- end total -->
+			<div id="getStarted">
+				<img id="submitForm" src="/assets/get-started.png">
+				<p>Click “Get Started” and we’ll conctact you
+				to get started.</p>
+			</div><!-- end getStarted -->
+	</div><!-- end step3 -->
+	<div id="step4">
+		<h3>Please Input Your info<h3>
+			<input type="text" name="name" placeholder="name">
+			<input type="text" name="email" placeholder="email">
+			<input type="text" name="phone" placeholder="phone">
+			<button type="submit" value="submit" id="submit">Submit</button>
+	</div><!-- end step4 -->
+ </div><!-- end form -->
+</form>

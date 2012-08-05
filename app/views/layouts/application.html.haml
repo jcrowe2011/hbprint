@@ -1,0 +1,12 @@
+!!!
+%html
+	%head
+		%title
+			hbprint
+		= csrf_meta_tags 			
+		= render 'layouts/stylesheets'
+		= render 'layouts/javascripts'
+	.wrapper	
+		= render 'layouts/header'
+		= yield
+

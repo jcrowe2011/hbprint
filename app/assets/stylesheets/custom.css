@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Myriad Pro", "Myriad Pro Cond", "Myriad Pro Light"; font-size: 14px; font-style: normal; font-weight: normal; 
+	background-color: black;
+	background-image: url('bg.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: scroll;
+}
+
+/*=== Global links ===*/
+a {
+	text-decoration: none;
+	color: black;
+}
+a:link {
+ 	text-decoration: none;
+	color: black;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: underline;
+}
+
+/* h selectors */
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+}
+
+
+.clr{
+	clear:both;
+}
+
+/*=== Page Wrapper ===*/
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+/*=== Header ===*/
+.pageHeader {
+	margin-top: 0px;
+	height: 124px;
+}
+
+.logo {
+	margin-top: 23px;
+}
+/*=== Nav ===*/
+.nav {
+	float: right;
+	list-style: none;
+}
+
+.nav li {
+	display: inline;
+	margin-right: 10px;
+	color: white;
+	font-weight: bold;
+}
+.nav a:hover {
+	text-decoration: underline;
+}
+
+.nav a {
+	color: white;
+}
+/*=== Main Content ===*/
+#main {
+	margin: 0 auto;
+}
+#leftContent {
+	background-image: url('left-bg.png');
+	float: left;
+	width: 682px;
+	height: 564px;
+	margin: 0px;
+	padding: 0px;
+	margin-left: -81px;
+	margin-top: -25px;
+	position: relative;
+}
+#pageTitle {
+	background-image: url('h1.png');
+	background-repeat: no-repeat;
+	width:574px;
+	height:33px;
+	margin-left: 75px;
+	margin-top: 41px;
+
+
+}
+#rightContent {
+	background-image: url('right-bg.png');
+	float: left;
+	width: 395px;
+	height: 564px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: relative;
+	z-index: -10;
+}
+
