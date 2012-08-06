@@ -13,7 +13,7 @@ gem 'backbone-on-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -51,7 +51,7 @@ group :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'guard-cucumber'
-  #gem 'sqlite3'
+  gem 'sqlite3'
   gem 'growl'
   gem 'webrat'
 end
@@ -66,14 +66,14 @@ group :test, :development do
 end
 
 group :development do
-  #gem 'sqlite3'
+  gem 'sqlite3'
   gem 'haml-rails'
   gem 'faker'
 end
 
 group :production do
-# gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+#gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
