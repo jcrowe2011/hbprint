@@ -15,7 +15,7 @@ gem 'backbone-on-rails'
 
 #gem 'sqlite3'
 
-gem 'pg'
+
 # Gems used only for assets and not required
 # in production environments by default.
 #     gem "coffee-rails
@@ -67,7 +67,6 @@ end
 
 group :development do
   #gem 'sqlite3'
-  gem 'pg'
   gem 'haml-rails'
   gem 'faker'
 end
