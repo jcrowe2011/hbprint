@@ -4,7 +4,7 @@ gem 'rails', '3.2.7'
 gem 'devise'
 gem 'cancan'
 gem 'heroku'
-gem 'thin'
+# gem 'thin'
 gem 'jquery-rails' # Let's consider using google CDN
 gem 'haml'
 gem 'therubyracer'
@@ -72,8 +72,8 @@ group :development do
 end
 
 group :production do
-gem 'sqlite3'
-#gem 'pg'
+#gem 'sqlite3'
+ gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
