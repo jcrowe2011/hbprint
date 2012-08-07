@@ -11,7 +11,12 @@ class PagesController < ApplicationController
   def about_us
     @title = "about_us"
   end
-  def contact_us
-    @title = "contact_us"
+  def mens
+    @title = "mens"
+    render :layout => 'white_body'
+  end
+  def categories
+    @title = "categories"
+    render :layout => 'white_body'
   end
 end

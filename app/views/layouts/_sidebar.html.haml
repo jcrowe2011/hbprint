@@ -1,0 +1,16 @@
+.sidebar
+	%h3 Join Our Newsletter
+	%h4 For Deals and Special Offers
+	%ul.checkmark
+		%li
+			%img{:src => image_path('checkmark.png')} Updates On Discounted Blanks
+		%li
+			%img{:src => image_path('checkmark.png')} Updates On Discounted Blanks
+		%li
+			%img{:src => image_path('checkmark.png')} Updates On Discounted Blanks
+	%form{:name => "myForm", :method => "post", :action => "#", :id => "myForm"}
+		%label{:for => "name"} Name:
+		%input{:type => "text", :class=> "name", :name => "name"}
+		.clr
+		%label{:for => "name"} Email:
+		%input{:type => "email", :class=> "name", :name => "name"}

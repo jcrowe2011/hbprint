@@ -6,8 +6,9 @@
 		= csrf_meta_tags 			
 		= render 'layouts/stylesheets'
 		= render 'layouts/javascripts'
+		:css
+			body {background: url('/assets/shortHeader.jpg') no-repeat;}
 	.wrapper	
-		= render 'layouts/header'
+		= render 'layouts/shortHeader'
 		= yield
-	= render 'layouts/footer'
-
+		

@@ -10,10 +10,19 @@ body {
 #form {
 	width: 375px;
 	height: 450px;
-	margin: 103px 0 0 9px;
+	margin: 47px 0 0 9px;
 	padding: 0 auto;
 	float: left;
 	}
+#formTitle {
+	font-size: 31px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0px 0px 6px #44acff;
+	padding-bottom: 10px;
+	
+}
 #progressBar {
 	background-image: url('/assets/progressBar.jpg');
 	background-repeat: repeat-x;
@@ -65,6 +74,9 @@ body {
 }*/
 #shirtSelected {
 	text-align:center;
+}
+#shirts {
+	margin-left: 15px;
 }
 /*=== step 2 ===*/	
 #step2 {

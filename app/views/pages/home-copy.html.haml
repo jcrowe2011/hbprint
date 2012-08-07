@@ -11,34 +11,45 @@
 				%li <span id="arrow">></span> Lightning-Fast Turnaround Times!																
 	#rightContent
 		= render 'layouts/form'
-.lowerContent		
+		
+#lowerContent
 	#row
-		%h1 Hundreds of Styles, Colors & Sizes
-		%ul.shirts
-			%li 
-				= link_to image_tag( 'aa-black-crew.jpg'), 'http://www.google.com'
-				%p Unisex T-shirts
-			%li 
-				= link_to image_tag( 'aa-pink-babydoll.jpg'), 'http://www.google.com'
-				%p Ladies & Girly
-			%li 
-				= link_to image_tag( 'aa-red-hoodie.jpg'), 'http://www.google.com'
-				%p Hoodies
-			%li 
-				= link_to image_tag( 'sweats.jpg'), 'http://www.google.com'
-				%p Sweats
-				.rowBtn
-					= link_to image_tag('btn-all-products.jpg'), 'www.google.com'			
-	= render 'layouts/sidebar'
+		%img{:src => image_path('satisfaction.jpg'), :alt => ''}
+		%h1 We Stand Behind Our Work!
+		%p HB Print is a Screen Printing and Embroidery shop located in Huntington Beach, Califoria that has  been helping general contractors, school teams, bands, clothing lines, food chains, and many subsidiaries within, ensure a classy, and professional look by printing High-Grade-Inks on 100% Cotton T-shirts that will last longer in tougher conditions.  We stand behind our product, and guarantee you'll be satisfied or your money back!
+		%img.shadow{:src => image_path('shadow.png')}
 	#row
-		%h1 Example Shirts
-		%img{:src => image_path('example-shirts.jpg')}
-			.rowBtn
-				= link_to image_tag('btn-all-products.jpg'), 'www.google.com'
+		%img{:src => image_path('form-revised.jpg'), :alt => ''}
+		%h1 Getting Started With Us
+		%p To get started with HB Print, fill out the simple form above. We'll get back to you within 24hrs.
+		%h1 You're Information is Safe!
+		%ul.row
+			%li
+				%img{:src => image_path('check-mark.jpg')} Secure Info Submission! Your information is secure!			
+			%li
+				%img{:src => image_path('check-mark.jpg')} Spam Free Guarantee! We won't sell your email certified!		
+			%li
+				%img{:src => image_path('check-mark.jpg')} Hassle Free Quote - No Obligtions! We get you the quote, and leave you to decide!		
+		%img.shadow{:src => image_path('shadow.png')}	
+	.clr						
+	#row
+		%h1 Sample Shirts
+		%img{:src => image_path('shirtts.jpg'), :alt => ''}
+		%img.shadow{:src => image_path('shadow.png')}
+		
 	#row
 		<object width="252" height="212"><param name="movie" value="http://www.youtube.com/v/clwFRuJb8Vo?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/clwFRuJb8Vo?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="252" height="212" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 		%h1 How We Started
 		%p We started with a small shop in Huntington Beach, Ca. With limited resources, we reached out to our community for help and support. As our business matured, we found the most important aspect to business growth is strong customer relationships.We began educating our friends, family, customers, and anyone else willing to listen, about the one thing we're so passionate about... Screen Printing! Turns out, a very large percentage of people are unaware of what goes into printing their t-shirts. We began creating a series of videos and blog post to educate our community and allow our prospectives to get a chance to know us before they settle. Check out this video on how to fold a t-shirt in 3 seconds or less, it's just one of the many instruments we've begun utilizing as the medium for connecting and communicating our passion for the industry.
-		.rowBtn
-			= link_to image_tag('btn-all-products.jpg'), 'www.google.com'	
-	.clr			
+		%img.shadow{:src => image_path('shadow.png')}
+
+.footer
+	HB Print, Inc.
+	%br
+	18253 Gothard St.
+	%br
+	Huntington Beach, Ca 92648
+	%br
+	%br
+	Copyright HBscrennprint.com. All Rights Reserved
+		

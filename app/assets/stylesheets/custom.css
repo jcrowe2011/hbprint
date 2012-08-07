@@ -2,13 +2,12 @@
 
 body {
 	font-family: "Myriad Pro", "Myriad Pro Cond", "Myriad Pro Light"; font-size: 14px; font-style: normal; font-weight: normal; 
-	background-color: black;
+	background-color: white;
 	background-image: url('bg.jpg');
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-attachment: scroll;
 }
-
 /*=== Global links ===*/
 a {
 	text-decoration: none;
@@ -42,7 +41,11 @@ h3 {
     line-height: 1;
     margin-bottom: 1em;
 }
-
+h4{
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     line-height: 1em;
@@ -92,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 /*=== Main Content ===*/
 #main {
 	margin: 0 auto;
+	height: 545px;
 }
 #leftContent {
 	background-image: url('left-bg.png');
@@ -103,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-left: -81px;
 	margin-top: -25px;
 	position: relative;
+	z-index: 999;
 }
 #pageTitle {
 	background-image: url('h1.png');
@@ -156,6 +161,191 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: -25px;
 	margin-left: -10px;
 	position: relative;
-	z-index: -10;
+	z-index: 998;
+}
+/*=== Lower Content ===*/
+.lowerContent {
+	
+}
+.shirts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+}
+.shirts li {
+	float: left;
+	text-align: center;
+	width: 170px;
+	font-size: 18px;
+}
+.shirts li a:hover {
+	color: blue;
+}
+.shirts p {
+	font-weight: bold;
+}
+.rowBtn {
+	float: right;
+	margin-right: 0px;
+	padding: 0 0px 0px 0;
+}
+#row {
+	margin: 15px auto;
+	font-size: 14px;
+	line-height: 20px;
+	border-bottom: 1px solid #c8c8c8;
+	min-height: 300px;
+	float: left;
+	width: 684px;
+	padding-top: 25px;
+}
+#row img {
+	float: left;
+	margin-right: 0px;
+	padding: 0 10px 10px 0;
+}
+#row h1{
+	font-size: 20px;
+}
+.row {
+	list-style: none;
+}
+.row li{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.row img{
+
+	margin: 0;
+	padding: 0;
+}
+#row object {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 65px;
+}
+/*=== Sidebar ===*/
+.sidebar {
+	margin: 0 auto;
+	width: 250px;
+	padding: 15px;
+	min-height: 1000px;
+	background-color: gray;
+	border-radius: 4px;
+	border: 1px solid #cecccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	float: right;
+	box-shadow: 2px 2px 4px #cecece;
+	background: #f9f9f9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f9f9f9 1%, #c5c5c5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f9f9f9), color-stop(100%,#c5c5c5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f9f9f9 1%,#c5c5c5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f9f9f9 1%,#c5c5c5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f9f9f9 1%,#c5c5c5 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f9f9f9 1%,#c5c5c5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#c5c5c5',GradientType=0 ); /* IE6-9 */
+	
+}
+.sidebar h3, h4 {
+	text-align: center;
+	margin: 0;
+}
+.checkmark {
+	list-style: none;
+	margin-top: 10px;
+}
+.checkmark li{
+	font-size: 16px;
+	font-weight: bold;
+}
+.checkmark img{
+	float: left;
+	margin-right: 10px;
+}
+/*=== Wordpress Blog Post ===*/
+
+.getImage {
+	margin-top: 15px;
+}
+.getImage img{
+	border: 1px solid rgba(0,0,0,.2);
+	padding: 5px;
+	margin-right: 15px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 }
 
+.exerpt {
+	margin-top: 20px;
+	width:750px;
+}
+/*=== Footer ===*/
+
+.footer{
+	background: url("footer-bg.jpg") ;
+	text-align: center;
+	margin-top: 40px;
+	color: white;
+	background-position: center bottom;
+	font-family: "Myriad Pro", "Myriad Pro Cond", "Myriad Pro Light";
+	font-weight: bold;
+	font-size: 15px;
+	height: 250px;
+	border-top: 1px solid #cecece;
+	border-top: 24px inset #4CAEFF;
+}
+.footer ul {
+	float: left;
+	margin: 0px;
+	list-style: none;
+	margin-top: 15px;
+	margin-left: 95px;
+	color: #cecece;
+	background: transparent;
+	border: none;
+	padding: 0 0 0 29px;
+}
+.footer .mcafee{
+	float: right;
+	margin: 0;
+	margin-top: 20px;
+}
+.footer .first {
+	margin-left: 0;
+}
+.footer li {
+	font-weight: normal;
+	font-size: 12px;
+	color: #cecece;
+}
+.connect a {
+background-position: 0 -803px;
+}
+.yelp a{
+background-position: -20px;
+margin-left: -20px;
+
+}
+.facebook a {
+background-position: 0 -21px;
+}
+.myspace a {
+background-position: 0 -41px;
+}
+.twitter a {
+background-position: 0 -62px;
+}
+.youtube a {
+background-position: 0 -83px;
+}
+.info li a{
+	display: block;
+	background-image: url("jpFoot_icons.png");
+	background-repeat: no-repeat;
+	line-height: 20px;
+	padding: 0 0 0 29px;
+}
